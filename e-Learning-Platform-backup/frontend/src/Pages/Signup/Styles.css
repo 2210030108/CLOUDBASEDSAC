@@ -1,0 +1,375 @@
+/* Base styles with improved organization */
+:root {
+    --primary-color: #0E3A59;
+    --accent-color: #157776;
+    --accent-hover: #04848492;
+    --error-color: #d41717;
+    --text-light: #FFF;
+  }
+  
+  /* Main section styling with responsive flex layout */
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    background: linear-gradient(to right bottom, #f5f5f5, #e9f3f7);
+    margin: 0;
+  }
+  
+  /* Form container with improved aesthetics */
+  .article {
+    min-height: auto;
+    width: 23rem;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Header animations and styling */
+  .header {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease forwards;
+  }
+  
+  .head {
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  .head::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transform: translateX(-50%);
+    transition: width 0.5s ease;
+  }
+  
+  .article:hover .head::after {
+    width: 60px;
+  }
+  
+  .Sub-head {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+    animation: fadeIn 1s ease 0.3s forwards;
+  }
+  
+  /* Input field styling and animations */
+  .inpts {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .input-x {
+    border: 0;
+    outline: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 85%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: white;
+    margin: 12px auto;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    display: block;
+    font-size: 16px;
+  }
+  
+  .input-x::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .input-x:focus {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-x:focus::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    transform: translateX(5px);
+  }
+  
+  /* Form elements appear with staggered animation */
+  form input:nth-child(1) { animation: slideUp 0.5s ease 0.1s both; }
+  form input:nth-child(3) { animation: slideUp 0.5s ease 0.2s both; }
+  form input:nth-child(5) { animation: slideUp 0.5s ease 0.3s both; }
+  form input:nth-child(7) { animation: slideUp 0.5s ease 0.4s both; }
+  
+  /* Error message styling */
+  .error-message {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    text-align: left;
+    padding-left: 2.5rem;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    transition: all 0.3s ease;
+  }
+  
+  /* Radio button container */
+  .rad-btns {
+    margin: 1.2rem;
+    margin-left: 2rem;
+    animation: fadeIn 0.5s ease 0.5s both;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Login link styling */
+  .signupage {
+    margin-top: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease 0.6s both;
+  }
+  
+  .signupage span {
+    font-size: small;
+    opacity: 0.8;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #4ecdc4 !important;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4ecdc4;
+    transition: width 0.3s ease;
+  }
+  
+  .link:hover::after {
+    width: 100%;
+  }
+  
+  /* Button styling with enhanced animations */
+  .btn {
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.5s ease 0.7s both;
+  }
+  
+  .btn-4 {
+    color: var(--text-light);
+    background-color: var(--accent-color);
+    border: none;
+    padding: 12px 25px;
+    width: 85%;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .btn-4:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-4:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-4::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+  }
+  
+  .btn-4:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Right side image styling */
+  .right-part {
+    margin-left: 30px;
+    max-width: 500px;
+    animation: floatImage 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imgs {
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+  }
+  
+  .right-part:hover .imgs {
+    transform: scale(1.02);
+  }
+  
+  /* Password requirements notice */
+  .text-sm {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    animation: fadeIn 1s ease 1s forwards;
+  }
+  
+  /* Define animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInDown {
+    from { 
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 1200px) {
+    .section {
+      margin-left: 0;
+      padding: 1rem;
+    }
+    
+    .right-part {
+      margin-left: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .section {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+    
+    .article {
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .right-part {
+      margin: 0;
+      order: -1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .imgs {
+      width: 70%;
+      max-width: 300px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .article {
+      padding: 1rem;
+      width: 95%;
+    }
+    
+    .input-x {
+      width: 90%;
+    }
+    
+    .rad-btns {
+      margin-left: 0;
+    }
+    
+    .head {
+      font-size: 24px;
+    }
+    
+    .btn-4 {
+      width: 90%;
+    }
+    
+    .imgs {
+      width: 90%;
+    }
+  }
